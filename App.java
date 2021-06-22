@@ -6,5 +6,9 @@ public class App {
         l.insert(89);
         l.insert(46);
         l.display();
+
+        System.out.println("---------");
+        l.delete(47);
+        l.display();
     }
 }
