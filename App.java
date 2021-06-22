@@ -1,5 +1,10 @@
 public class App {
     public static void main(String[] args) {
-        System.out.println("Testing");
+        LinkedList l = new LinkedList();
+        l.insert(4);
+        l.insert(5);
+        l.insert(89);
+        l.insert(46);
+        l.display();
     }
 }
