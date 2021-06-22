@@ -1,3 +1,8 @@
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 public class LinkedList {
     Node root;
 
@@ -59,5 +64,32 @@ public class LinkedList {
             System.out.println(curr.val);
             curr = curr.next;
         }
+    }
+
+    public void removeDuplicates() {
+        if (root == null)
+            return;
+        Map<Integer, Integer> map = new HashMap<>();
+        Node curr = root;
+        while (curr != null) {
+            if (map.containsKey(curr.val)) {
+                int freq = map.get(curr.val);
+                freq++;
+                map.put(curr.val, freq);
+            } else {
+                map.put(curr.val, 1);
+            }
+            curr = curr.next;
+        }
+
+        curr = root;
+        while (curr.next != null) {
+            int freq = map.get(curr.val);
+            if (freq > 1) {
+                delete(curr.val);
+            }
+            curr = curr.next;
+        }
+
     }
 }

@@ -1,14 +1,18 @@
 public class App {
     public static void main(String[] args) {
         LinkedList l = new LinkedList();
-        l.insert(4);
-        l.insert(5);
-        l.insert(89);
-        l.insert(46);
+        l.insert(1);
+        l.insert(2);
+        l.insert(2);
+        l.insert(2);
+        l.insert(6);
+        l.insert(8);
+        l.insert(9);
+
         l.display();
 
         System.out.println("---------");
-        l.delete(47);
+        l.removeDuplicates();
         l.display();
     }
 }
