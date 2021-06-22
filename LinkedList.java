@@ -1,5 +1,7 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -128,5 +130,24 @@ public class LinkedList {
         }
 
         curr.next = curr.next.next;
+    }
+
+    public boolean isPalindrome() {
+        if (root == null)
+            return false;
+
+        List<Integer> l = new ArrayList<>();
+        Node curr = root;
+        while (curr != null) {
+            l.add(curr.val);
+            curr = curr.next;
+        }
+
+        for (int i = 0; i < l.size(); i++) {
+            if (l.get(i) != l.get(l.size() - i - 1))
+                return false;
+        }
+
+        return true;
     }
 }
