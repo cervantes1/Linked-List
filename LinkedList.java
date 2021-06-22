@@ -90,6 +90,28 @@ public class LinkedList {
             }
             curr = curr.next;
         }
+    }
+
+    public int kthNode(int n) {
+        if (root == null)
+            return -1;
+
+        Node curr = root;
+        int size = 0;
+        while (curr != null) {
+            size++;
+            curr = curr.next;
+        }
+
+        curr = root;
+        size -= n;
+        for (int i = 0; i < size; i++) {
+            curr = curr.next;
+        }
+        return curr.val;
+    }
+
+    public void deleteMiddle() {
 
     }
 }

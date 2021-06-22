@@ -12,7 +12,8 @@ public class App {
         l.display();
 
         System.out.println("---------");
-        l.removeDuplicates();
-        l.display();
+        // l.removeDuplicates();
+        // l.display();
+        System.out.println(l.kthNode(3));
     }
 }
