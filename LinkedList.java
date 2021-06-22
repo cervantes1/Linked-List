@@ -112,6 +112,21 @@ public class LinkedList {
     }
 
     public void deleteMiddle() {
+        if (root == null)
+            return;
 
+        int size = 0;
+        Node curr = root;
+        while (curr != null) {
+            size++;
+            curr = curr.next;
+        }
+
+        curr = root;
+        for (int i = 0; i < (size / 2) - 1; i++) {
+            curr = curr.next;
+        }
+
+        curr.next = curr.next.next;
     }
 }
